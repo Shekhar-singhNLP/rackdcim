@@ -4,7 +4,7 @@ import axios from "axios";
 import { Lightbulb } from "lucide-react";
 
 async function fetchWhatIf(targetLoad) {
-  const res = await axios.get("http://127.0.0.1:8000/fleet/what-if", {
+  const res = await axios.get("https://rackdcim-api.onrender.com/fleet/what-if", {
     params: { target_load: targetLoad },
   });
   return res.data;
