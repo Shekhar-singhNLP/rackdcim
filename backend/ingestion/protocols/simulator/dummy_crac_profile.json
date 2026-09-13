@@ -1,0 +1,20 @@
+{
+  "vendor": "generic_crac",
+  "model": "SIM-CRAC-500",
+  "device_type": "cooling",
+  "registers": {
+    "holding": {
+      "input_voltage": {"address": 0, "unit": "V", "nominal": 400.0, "scale": 10},
+      "output_voltage": {"address": 1, "unit": "V", "nominal": 400.0, "scale": 10},
+      "load_current": {"address": 2, "unit": "A", "nominal": 15.0, "scale": 100},
+      "supply_air_temp": {"address": 3, "unit": "C", "nominal": 18.0, "scale": 10},
+      "return_air_temp": {"address": 4, "unit": "C", "nominal": 24.0, "scale": 10},
+      "internal_temperature": {"address": 5, "unit": "C", "nominal": 22.0, "scale": 10}
+    },
+    "discrete_input": {
+      "on_battery": {"address": 0},
+      "on_bypass": {"address": 1},
+      "battery_low": {"address": 2}
+    }
+  }
+}

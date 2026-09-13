@@ -1,0 +1,19 @@
+{
+  "vendor": "eaton",
+  "model": "9395-UPS",
+  "registers": {
+    "holding": {
+      "input_voltage": {"address": 0, "scale": 10, "unit": "V"},
+      "output_voltage": {"address": 1, "scale": 10, "unit": "V"},
+      "load_current": {"address": 2, "scale": 100, "unit": "A"},
+      "battery_voltage": {"address": 3, "scale": 10, "unit": "V"},
+      "battery_capacity": {"address": 4, "scale": 1, "unit": "%"},
+      "internal_temperature": {"address": 5, "scale": 10, "unit": "C"}
+    },
+    "discrete_input": {
+      "on_battery": {"address": 0},
+      "on_bypass": {"address": 1},
+      "battery_low": {"address": 2}
+    }
+  }
+}

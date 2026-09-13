@@ -1,0 +1,20 @@
+{
+  "vendor": "generic_pdu",
+  "model": "SIM-PDU-2000",
+  "device_type": "pdu",
+  "registers": {
+    "holding": {
+      "input_voltage": {"address": 0, "unit": "V", "nominal": 230.0, "scale": 10},
+      "output_voltage": {"address": 1, "unit": "V", "nominal": 230.0, "scale": 10},
+      "load_current": {"address": 2, "unit": "A", "nominal": 8.0, "scale": 100},
+      "total_power_watts": {"address": 3, "unit": "W", "nominal": 1800.0, "scale": 100},
+      "outlet_count_active": {"address": 4, "unit": "count", "nominal": 12.0, "scale": 1},
+      "internal_temperature": {"address": 5, "unit": "C", "nominal": 28.0, "scale": 10}
+    },
+    "discrete_input": {
+      "on_battery": {"address": 0},
+      "on_bypass": {"address": 1},
+      "battery_low": {"address": 2}
+    }
+  }
+}

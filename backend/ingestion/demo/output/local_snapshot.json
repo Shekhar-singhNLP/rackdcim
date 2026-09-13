@@ -1,0 +1,29 @@
+{
+  "device_id": "s1",
+  "machine_class": "Acls",
+  "collected_at": "2026-08-19T02:29:10.491178+00:00",
+  "fields": {
+    "cpu_freq": {
+      "value": {
+        "current_mhz": 1800.0,
+        "min_mhz": 0.0,
+        "max_mhz": 1800.0
+      },
+      "available": true,
+      "reason": null
+    },
+    "battery": {
+      "value": {
+        "percent": 92,
+        "power_plugged": false
+      },
+      "available": true,
+      "reason": null
+    },
+    "power_watts": {
+      "value": 16.677,
+      "available": true,
+      "reason": null
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "vendor": "generic_ups",
+  "model": "SIM-UPS-3000",
+  "registers": {
+    "holding": {
+      "input_voltage": {"address": 0, "unit": "V", "nominal": 230.0, "scale": 10},
+      "output_voltage": {"address": 1, "unit": "V", "nominal": 230.0, "scale": 10},
+      "load_current": {"address": 2, "unit": "A", "nominal": 12.0, "scale": 100},
+      "battery_voltage": {"address": 3, "unit": "V", "nominal": 48.0, "scale": 10},
+      "battery_capacity": {"address": 4, "unit": "%", "nominal": 100.0, "scale": 1},
+      "internal_temperature": {"address": 5, "unit": "C", "nominal": 32.0, "scale": 10}
+    },
+    "discrete_input": {
+      "on_battery": {"address": 0},
+      "on_bypass": {"address": 1},
+      "battery_low": {"address": 2}
+    }
+  }
+}
