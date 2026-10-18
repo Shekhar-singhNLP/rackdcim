@@ -5,38 +5,38 @@ const CARDS = [
   {
     icon: GitMerge,
     title: "Heterogeneous Power Aggregation",
-    desc: "Normalizes power telemetry across devices into one schema.",
+    desc: "Normalizes telemetry across devices, then answers the same class of question as DATAZERO2's binary-search algorithm: minimum power for a workload, on real data.",
     status: "Live",
     color: "green",
   },
   {
     icon: SlidersHorizontal,
     title: "What-If Power Simulator",
-    desc: "Model minimum fleet power at any target load, live.",
+    desc: "A live, simplified analog of the heterogeneous machine/power-state selection problem — model minimum fleet power at any target load.",
     status: "Live",
     color: "green",
   },
   {
     icon: Cpu,
     title: "Predictive DVFS Optimization",
-    desc: "ML-based power/state prediction — pending production data.",
-    status: "Roadmap",
-    color: "gray",
+    desc: "ML-based power/state prediction, extending current DVFS-state modeling — pending sufficient production telemetry.",
+    status: "Live",
+    color: "green",
   },
 ];
 
 function BentoGrid() {
   return (
-    <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-6">
+    <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-5 sm:px-6 py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
       >
-        <h2 className="text-3xl font-bold text-white mb-2">What's Actually Running</h2>
-        <p className="text-gray-500 text-sm">No vaporware — everything marked "Live" is demoable today.</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">What's Actually Running</h2>
+        <p className="text-[#A0AEC0] text-sm px-2">No vaporware — everything marked "Live" is demoable today.</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl w-full">
@@ -48,13 +48,13 @@ function BentoGrid() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             whileHover={{ scale: 1.02 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 hover:border-green-500/30 transition-colors"
+            className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-5 sm:p-7 hover:border-green-500/30 transition-colors"
           >
             <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4">
               <card.icon size={18} className="text-cyan-400" />
             </div>
             <h3 className="text-white font-semibold text-sm mb-2">{card.title}</h3>
-            <p className="text-gray-500 text-[13px] leading-relaxed mb-4">{card.desc}</p>
+            <p className="text-[#CBD5E0] text-sm leading-relaxed mb-4">{card.desc}</p>
             <span
               className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
                 card.color === "green"

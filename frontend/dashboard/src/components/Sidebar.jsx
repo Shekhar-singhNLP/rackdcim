@@ -4,11 +4,19 @@ import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard, HeartPulse, Lightbulb, Boxes,
   LayoutGrid, Zap, Wind, Network, GitBranch, FileBarChart,
-  ChevronLeft, ChevronRight,
+  ChevronLeft, ChevronRight, Cpu, Target,
 } from "lucide-react";
 import { useAppStore } from "../store/useAppStore";
 
 const navSections = [
+  {
+    heading: "Research",
+    links: [
+      { label: "DVFS Modeling", path: "/dashboard/research/dvfs", icon: Cpu },
+      { label: "QoS Scheduling", path: "/dashboard/research/qos", icon: Target },
+      { label: "Power Sharing", path: "/dashboard/research/marketplace", icon: Network },
+    ],
+  },
   {
     heading: "Standard",
     links: [

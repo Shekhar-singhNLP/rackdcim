@@ -16,7 +16,7 @@ function WhatIf() {
   const { data, isFetching } = useQuery({
     queryKey: ["whatIf", targetLoad],
     queryFn: () => fetchWhatIf(targetLoad),
-    staleTime: 500,
+    placeholderData: (previousData) => previousData,
   });
 
   const deviceEntries = data
@@ -29,21 +29,14 @@ function WhatIf() {
         <Lightbulb size={18} className="text-brand" />
         <h1 className="text-white text-xl font-bold">What-if Analysis</h1>
       </div>
-      <p className="text-gray-500 text-[12.5px] mb-1">
-        Minimum power required to meet a target workload — a live analog of the
-        heterogeneous-machine power/DVFS-state selection problem from DATAZERO2 (IRIT Toulouse).
-      </p>
-      <p className="text-gray-600 text-[11px] mb-8">
-        Not a reimplementation of their binary-search algorithm — a simplified
-        demonstration built on real, normalized telemetry.
+      <p className="text-gray-500 text-[12.5px] mb-8">
+        Minimum power required to meet a target workload across the fleet.
       </p>
 
       <div className="bg-surface border border-border rounded-xl p-6 mb-6">
         <div className="flex justify-between items-baseline mb-3">
           <span className="text-gray-400 text-sm">Target Load</span>
-          <span className="text-brand font-bold text-lg">
-            {(targetLoad * 100).toFixed(0)}%
-          </span>
+          <span className="text-brand font-bold text-lg">{(targetLoad * 100).toFixed(0)}%</span>
         </div>
         <input
           type="range"
@@ -75,10 +68,7 @@ function WhatIf() {
             {deviceEntries.map(([key, value]) => {
               const deviceId = key.replace("_watts", "");
               return (
-                <div
-                  key={key}
-                  className="bg-surface border border-border rounded-lg p-4 flex items-center justify-between"
-                >
+                <div key={key} className="bg-surface border border-border rounded-lg p-4 flex items-center justify-between">
                   <span className="text-gray-300 text-sm font-medium">{deviceId}</span>
                   <span className="text-white font-bold">{value.toFixed(1)} W</span>
                 </div>

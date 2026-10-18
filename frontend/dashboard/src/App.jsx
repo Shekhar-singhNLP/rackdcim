@@ -5,6 +5,9 @@ import LandingPage from "./landing/LandingPage";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 
+import DVFSAnalysis from "./pages/research/DVFSAnalysis";
+import QoSScheduling from "./pages/research/QoSScheduling";
+import ClusterMarketplace from "./pages/research/ClusterMarketplace";
 import EnterpriseOverview from "./pages/EnterpriseOverview";
 import EnterpriseHealth from "./pages/EnterpriseHealth";
 import WhatIf from "./pages/WhatIf";
@@ -33,7 +36,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-
+        <Route path="/dashboard/research/dvfs" element={<DashboardLayout><DVFSAnalysis /></DashboardLayout>} />
+        <Route path="/dashboard/research/qos" element={<DashboardLayout><QoSScheduling /></DashboardLayout>} />
+        <Route path="/dashboard/research/marketplace" element={<DashboardLayout><ClusterMarketplace /></DashboardLayout>} />
         <Route path="/dashboard/overview" element={<DashboardLayout><EnterpriseOverview /></DashboardLayout>} />
         <Route path="/dashboard/health" element={<DashboardLayout><EnterpriseHealth /></DashboardLayout>} />
         <Route path="/dashboard/what-if" element={<DashboardLayout><WhatIf /></DashboardLayout>} />

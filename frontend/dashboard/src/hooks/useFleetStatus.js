@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const API_URL = "https://rackdcim-api.onrender.com/fleet/status";
-
 async function fetchFleetStatus() {
   const response = await axios.get(API_URL);
   return response.data;
